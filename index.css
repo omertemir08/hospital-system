@@ -1,3 +1,15 @@
-.div{
-    background-color: black;
-}
+.signup{
+    background-image: url(istockphoto-629943966-2048x2048.jpg); /* Resmin dosya adını ve uzantısını belirtin */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Sayfa yüksekliği kadar olacak şekilde ayarlandı */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Metin rengini ayarlayabilirsiniz */
+    font-family: 'Arial', sans-serif;
+  }
+  
