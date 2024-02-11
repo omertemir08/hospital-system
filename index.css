@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; /* Metin rengini ayarlayabilirsiniz */
+    color: rgb(255, 255, 255); /* Metin rengini ayarlayabilirsiniz */
     font-family: 'Arial', sans-serif;
   }
   

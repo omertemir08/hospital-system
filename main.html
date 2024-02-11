@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fotoğraflar</title>
+<link rel="stylesheet" href="styles.css">
+
+
+
+
+
+</head>
+<body>
+
+<div class="photo" id="photo1" onclick="href('hasta_login')" onmouseover="blurPhoto(2)" onmouseout="unblurPhoto(2)">
+    <img src="istockphoto-629943966-2048x2048.jpg" alt="Fotoğraf 1">
+    <div class="text-overlay">Doctor Girişi</div>
+</div>
+<div class="photo" id="photo2" onclick="href('doctor_login')" onmouseover="blurPhoto(1)" onmouseout="unblurPhoto(1)">
+    <img src="istockphoto-1409899011-2048x2048.jpg" alt="Fotoğraf 2">
+    <div class="text-overlay">Hasta Girişi</div>
+</div>
+
+<script>
+
+function href(link) {
+    
+   window.location.href=link+"."+"html"
+}
+function blurPhoto(photoNumber) {
+    var photoToBlur = document.getElementById("photo" + photoNumber);
+    photoToBlur.classList.add("blur");
+}
+
+function unblurPhoto(photoNumber) {
+    var photoToUnblur = document.getElementById("photo" + photoNumber);
+    photoToUnblur.classList.remove("blur");
+}
+</script>
+
+</body>
+</html>

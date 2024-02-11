@@ -1,0 +1,37 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.photo {
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    float: left;
+    box-sizing: border-box;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0); /* Change the text color to white or any desired color */
+    font-size: 44px; /* Adjust the font size as needed */
+    cursor: pointer;
+    padding: 20px; /* Padding around the text */
+    background-color: rgba(255, 255, 255, 0.616);
+    letter-spacing: 2px;
+}
+
+.blur {
+    filter: blur(4px); /* Apply blur effect */
+}

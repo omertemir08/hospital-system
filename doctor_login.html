@@ -1,55 +1,16 @@
-<?php
-
-$host = "127.0.0.1";
-$dbname = "test";
-$username = "root";
-$password = "123";
-$conn = new mysqli($host, $username, $password, $dbname);
-
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
-    $email = $_POST['email'] ?? '';
-    $password2 = $_POST['password2'] ?? '';
-
-
-    $stmt = $conn->prepare("SELECT * FROM user WHERE email = ? AND password2 = ?");
-    $stmt->bind_param("ss", $email, $password2);
-
-   
-    $stmt->execute();
-
-   
-    $result = $stmt->get_result();
-
-  
-    if ($result->num_rows > 0) {
-        header("Location: signup-success.html");
-        // giriş onayanıyor yönlenirme yapın
-    } else {
-        echo "Login failed. Invalid email or password.";
-    }
-
-    $stmt->close();
-}
-
-$conn->close();
-
-?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Giriş</title>
     <meta charset="UTF-8">
+    <title>Signup</title>
+    <link rel="stylesheet" href="index.css">   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
- <style>   body {
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="/js/validation.js" defer></script>
+    <style>
+        body {
             
-            background: url('istockphoto-1409899011-2048x2048') center/cover no-repeat;
+            background: url('istockphoto-629943966-2048x2048.jpg') center/cover no-repeat;
             margin: 10;
             font-family: Arial, sans-serif;
             display: flex;
@@ -57,7 +18,7 @@ $conn->close();
             align-items: center;
             height: 100vh;
             backdrop-filter: blur(3px);
-        }   
+        }
 
         form {
             text-align: center;
@@ -84,6 +45,7 @@ h1{
             width: 100%;
             padding: 8px;
             box-sizing: border-box;
+            background-color: white;
         }
 
         button {
@@ -100,19 +62,23 @@ h1{
         }
     </style>
 </head>
-<body>
-    
-    <h1>Giriş</h1>
-    
-    <form method="post" action="">
+<body> 
+     
+    <form action="process-signup.php" method="post" id="signup" novalidate>  
+          
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+        
         <label for="email">Email</label>
-        <input name="email" id="email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
+        <input type="email" id="email" name="email">
         
-        <label for="password">Şifre</label>
-        <input type="password" name="password2" id="password2">
+        <label for="password">Password</label>
+        <input type="password" id="password2" name="password2">
         
-        <button>Giriş</button>
+        <label for="password_confirmation">Repeat Password</label>
+        <input type="password" id="password_confirmation" name="password_confirmation">
+        
+        <button>Sign up</button>
     </form>
-
 </body>
 </html>
