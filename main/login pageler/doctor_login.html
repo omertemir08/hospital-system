@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+
+    <style>
+        body {
+            background: url('istockphoto-629943966-2048x2048.jpg') center/cover no-repeat;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+            backdrop-filter: blur(3px);
+            background-size: cover;
+          
+        }
+  
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #008cba;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    </style>
+
+
+
+</head>
+<body> 
+   
+        <div class="container">
+            <h2 style="text-align: center;">Doktor Girişi </h2>
+            <form action="doctorlogin.php" method="post" id="signup" novalidate>  
+                <input  type="text" name="email"  placeholder="Adınız" required>
+                <input type="password" name="password2"  placeholder="Şifreniz" required>
+           
+                <button type="submit">Login</button>
+            </form>
+        </div>
+</body>
+</html>

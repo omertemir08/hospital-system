@@ -17,7 +17,7 @@ if (!$stmt->prepare($sql)) {
 $stmt->bind_param("sss", $_POST["name"], $_POST["email"], $_POST["password2"]);
                   
 if ($stmt->execute()) {
-    header("Location: signup-success.html");
+    header("Location: ./mainpage.html");
     exit;
 } else {
     if ($mysqli->errno === 1062) {

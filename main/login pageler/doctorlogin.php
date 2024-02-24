@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   
     if ($result->num_rows > 0) {
-        header("Location: signup-success.html");
+        header("Location: mainpage.html");
         // giriş onayanıyor yönlenirme yapın
     } else {
         echo "Login failed. Invalid email or password.";
